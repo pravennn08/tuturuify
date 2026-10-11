@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "displayName": "Tuturuify",
   "description": "Play your tuturu sound when a new error appears in VS Code.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pravennn08/tuturuify.git"
+  },
   "publisher": "tuturuify-local",
   "engines": {
     "vscode": "^1.96.0"
@@ -87,7 +91,7 @@
     "diagnostics"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devEngines": {
     "packageManager": {
       "name": "pnpm",

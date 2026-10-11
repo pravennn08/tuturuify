@@ -11,7 +11,7 @@ Warnings, information, and hints stay silent. This first version runs on Windows
 ![Biome](https://img.shields.io/badge/Biome-60A5FA?logo=biome&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-.ps1-red)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
-[![License: ISC](https://img.shields.io/badge/License-ISC-green)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE.md)
 
 </div>
 
@@ -135,5 +135,6 @@ Audio playback uses a hidden Windows PowerShell process and the built-in WPF Med
 there are no runtime npm dependencies or external audio players to install. A machine policy
 that blocks PowerShell or Windows media components can prevent playback.
 
-The bundled clip is user-provided. The ISC license in LICENSE.md covers the extension code;
-audio redistribution rights remain with the clip's rights holder.
+The MIT license in LICENSE.md applies to the extension code and documentation.
+The bundled audio (`media/tuturu.mp3`) is excluded from that license and remains subject to
+its rights holder's terms. A public release must have permission to redistribute the clip.
