@@ -6,6 +6,7 @@ out-tests/**
 node_modules/**
 releases/**
 docs/**
+media/avatar.png
 dist/**/*.map
 tsconfig*.json
 biome.json

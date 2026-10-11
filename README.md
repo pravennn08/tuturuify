@@ -1,8 +1,10 @@
 <div align="center">
 
+<img src="media/icon.png" alt="Tuturuify icon" width="128" height="128" />
+
 <h1>Tuturuify</h1>
 
-<p>Play your tuturu sound when a new **Error** diagnostic appears in VS Code's Problems panel.
+<p>Play your tuturu sound when a new <strong>Error</strong> diagnostic appears in VS Code's Problems panel.
 Warnings, information, and hints stay silent. This first version runs on Windows desktop VS Code.</p>
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -14,6 +16,20 @@ Warnings, information, and hints stay silent. This first version runs on Windows
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE.md)
 
 </div>
+
+## Screenshots
+
+The locally installed extension uses the white-background Tuturuify icon and provides commands
+to test the sound, choose your audio file, and toggle automatic playback.
+
+![Tuturuify installed in VS Code, showing its icon and available commands](media/screenshots/extension-overview.png)
+
+A new TypeScript error triggers automatic playback. The **Tuturuify** Output channel records
+`Played tuturu (new error).` when playback finishes. Warnings, information, and hints stay silent.
+
+![A new TypeScript error and Tuturuify's successful automatic playback log](media/screenshots/new-error.png)
+
+These screenshots were captured from a local VSIX installation before Marketplace publishing.
 
 ## Develop
 
@@ -136,5 +152,6 @@ there are no runtime npm dependencies or external audio players to install. A ma
 that blocks PowerShell or Windows media components can prevent playback.
 
 The MIT license in LICENSE.md applies to the extension code and documentation.
-The bundled audio (`media/tuturu.mp3`) is excluded from that license and remains subject to
-its rights holder's terms. A public release must have permission to redistribute the clip.
+The user-provided audio and character artwork (`media/tuturu.mp3`, `media/icon.png`, and
+`media/avatar.png`) are excluded from that license and remain subject to their rights holders'
+terms. A public release must have permission to redistribute these assets.

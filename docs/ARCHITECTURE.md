@@ -32,6 +32,8 @@ tuturuify/
   .vscode/                 F5 launch, compile tasks, Biome editor setup
   docs/ARCHITECTURE.md      Component and lifecycle documentation
   media/tuturu.mp3          Default bundled audio
+  media/icon.png            256 x 256 PNG used for the extension listing and README
+  media/avatar.png          1024 x 1024 avatar export, excluded from the VSIX
   scripts/playSound.ps1    Windows media playback helper
   scripts/package.cjs      Create releases/ and package using the manifest version
   src/

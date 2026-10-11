@@ -2,6 +2,11 @@
   "name": "tuturuify",
   "version": "1.0.0",
   "displayName": "Tuturuify",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#FFFFFF",
+    "theme": "light"
+  },
   "description": "Play your tuturu sound when a new error appears in VS Code.",
   "repository": {
     "type": "git",
