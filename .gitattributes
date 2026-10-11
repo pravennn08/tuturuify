@@ -1,0 +1,7 @@
+# Keep checked-out text files compatible with Biome on Windows and other platforms.
+* text=auto eol=lf
+
+# Audio and packaged extensions must never undergo line-ending conversion.
+*.mp3 binary
+*.wav binary
+*.vsix binary

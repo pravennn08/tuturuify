@@ -12,6 +12,7 @@ biome.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
 .gitignore
+.gitattributes
 .editorconfig
 .pnpm-store/**
 scripts/package.cjs

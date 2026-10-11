@@ -87,8 +87,25 @@ Dependencies are installed with `--frozen-lockfile`, with the pnpm store cached 
 
 The workflow checks Biome formatting/linting, checks TypeScript, runs the error detection tests,
 then compiles and packages the extension. Successful runs upload `releases/*.vsix` as the
-**tuturuify-vsix** artifact, retained for 14 days. Download it from the workflow run's Artifacts
-section. Audio-device playback is checked manually in desktop VS Code.
+**tuturuify-vsix** artifact, retained for 14 days. Audio-device playback is checked manually in
+desktop VS Code.
+
+To test the CI-built extension:
+
+1. Open your GitHub repository's **Actions** tab and select a successful **CI** run.
+2. On the run's summary page, scroll to **Artifacts** and download **tuturuify-vsix**.
+3. Extract the ZIP to find `tuturuify-1.0.0.vsix`.
+4. In your normal VS Code window, press **Ctrl+Shift+P**, run **Extensions: Install from VSIX...**,
+   and select the extracted `.vsix`. Reload if prompted.
+5. Run **Tuturuify: Test Sound**, then introduce a new TypeScript error to check automatic playback.
+
+Runs that fail a check before packaging do not produce a VSIX artifact. To test a local build
+while fixing CI, run `pnpm package` and install the `.vsix` from `releases/` instead.
+
+`.gitattributes` keeps text files checked out with LF line endings, matching Biome and
+`.editorconfig`. Without this rule, Windows Git can convert files to CRLF and cause Biome
+formatting failures in CI even when local checks pass. Commit `.gitattributes` with the fix;
+re-running an old failed commit will still use its old checkout rules. Audio files stay binary.
 
 Commit `pnpm-lock.yaml` with dependency changes so CI can install the same versions. The workflow
 builds an installable package; Marketplace publishing is a separate release step.
