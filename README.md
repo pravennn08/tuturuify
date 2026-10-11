@@ -1,7 +1,19 @@
-# Tuturuify
+<div align="center">
 
-Play your tuturu sound when a new **Error** diagnostic appears in VS Code's Problems panel.
-Warnings, information, and hints stay silent. This first version runs on Windows desktop VS Code.
+<h1>Tuturuify</h1>
+
+<p>Play your tuturu sound when a new **Error** diagnostic appears in VS Code's Problems panel.
+Warnings, information, and hints stay silent. This first version runs on Windows desktop VS Code.</p>
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-22%2B-5FA04E?logo=nodedotjs&logoColor=white)
+![pnpm](https://img.shields.io/badge/pnpm-F69220?logo=pnpm&logoColor=white)
+![Biome](https://img.shields.io/badge/Biome-60A5FA?logo=biome&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-.ps1-red)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+[![License: ISC](https://img.shields.io/badge/License-ISC-green)](LICENSE.md)
+
+</div>
 
 ## Develop
 
@@ -34,21 +46,21 @@ Clear **Tuturuify: Sound Path** in Settings to return to the bundled MP3.
 
 ## Commands
 
-| Command | Action |
-| --- | --- |
-| Tuturuify: Test Sound | Play manually, including when automatic playback is disabled |
-| Tuturuify: Choose Sound | Select a local MP3 or WAV |
-| Tuturuify: Toggle Error Sound | Enable or disable automatic playback |
+| Command                       | Action                                                       |
+| ----------------------------- | ------------------------------------------------------------ |
+| Tuturuify: Test Sound         | Play manually, including when automatic playback is disabled |
+| Tuturuify: Choose Sound       | Select a local MP3 or WAV                                    |
+| Tuturuify: Toggle Error Sound | Enable or disable automatic playback                         |
 
 ## Settings
 
-| Setting | Default | Purpose |
-| --- | --- | --- |
-| `tuturuify.enabled` | `true` | Enable automatic error sounds |
-| `tuturuify.soundPath` | Empty | Use bundled audio, or provide an absolute MP3/WAV path |
-| `tuturuify.volume` | `0.8` | Volume from 0 to 1 |
-| `tuturuify.debounceMs` | `400` | Wait for diagnostics to settle |
-| `tuturuify.cooldownMs` | `2000` | Minimum time between automatic sounds |
+| Setting                | Default | Purpose                                                |
+| ---------------------- | ------- | ------------------------------------------------------ |
+| `tuturuify.enabled`    | `true`  | Enable automatic error sounds                          |
+| `tuturuify.soundPath`  | Empty   | Use bundled audio, or provide an absolute MP3/WAV path |
+| `tuturuify.volume`     | `0.8`   | Volume from 0 to 1                                     |
+| `tuturuify.debounceMs` | `400`   | Wait for diagnostics to settle                         |
+| `tuturuify.cooldownMs` | `2000`  | Minimum time between automatic sounds                  |
 
 Errors already reported when Tuturuify activates are recorded silently. Errors subsequently
 reported by a language server can trigger, including when that language server first starts.
