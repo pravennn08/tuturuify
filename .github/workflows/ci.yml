@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-and-package:
+    name: Check and package on Windows
+    runs-on: windows-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check formatting and lint
+        run: pnpm check
+
+      - name: Check TypeScript
+        run: pnpm typecheck
+
+      - name: Run error detection tests
+        run: pnpm test
+
+      - name: Compile and package extension
+        run: pnpm package
+
+      - name: Upload VSIX
+        uses: actions/upload-artifact@v7
+        with:
+          name: tuturuify-vsix
+          path: releases/*.vsix
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0

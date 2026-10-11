@@ -1,0 +1,107 @@
+{
+  "name": "tuturuify",
+  "version": "1.0.0",
+  "displayName": "Tuturuify",
+  "description": "Play your tuturu sound when a new error appears in VS Code.",
+  "publisher": "tuturuify-local",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "compile": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
+    "test": "tsc -p tsconfig.test.json && node --test out-tests/test/*.test.js",
+    "verify": "pnpm check && pnpm typecheck && pnpm test && pnpm compile",
+    "package": "tsc -p tsconfig.json && node scripts/package.cjs"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "tuturuify.testSound",
+        "title": "Tuturuify: Test Sound"
+      },
+      {
+        "command": "tuturuify.chooseSound",
+        "title": "Tuturuify: Choose Sound"
+      },
+      {
+        "command": "tuturuify.toggle",
+        "title": "Tuturuify: Toggle Error Sound"
+      }
+    ],
+    "configuration": {
+      "title": "Tuturuify",
+      "properties": {
+        "tuturuify.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play the sound when a new error diagnostic appears."
+        },
+        "tuturuify.soundPath": {
+          "type": "string",
+          "default": "",
+          "scope": "application",
+          "description": "Absolute path to an MP3 or PCM WAV file. Leave empty to use media/tuturu.mp3 bundled with the extension."
+        },
+        "tuturuify.volume": {
+          "type": "number",
+          "default": 0.8,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Sound volume, from 0 (muted) to 1 (full volume)."
+        },
+        "tuturuify.debounceMs": {
+          "type": "integer",
+          "default": 400,
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Wait this long after diagnostics change before playing. Errors fixed during this delay stay silent."
+        },
+        "tuturuify.cooldownMs": {
+          "type": "integer",
+          "default": 2000,
+          "minimum": 0,
+          "maximum": 60000,
+          "description": "Minimum time between automatic sounds. Errors during cooldown are skipped."
+        }
+      }
+    }
+  },
+  "keywords": [
+    "tuturu",
+    "errors",
+    "sound",
+    "diagnostics"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.11.2",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.11.2",
+  "type": "commonjs",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/node": "^22.20.5",
+    "@types/vscode": "1.96.0",
+    "@vscode/vsce": "4.0.0",
+    "typescript": "7.0.2"
+  }
+}
