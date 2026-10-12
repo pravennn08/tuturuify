@@ -104,8 +104,7 @@ The workspace recommends the official Biome VS Code extension and uses it for fo
 Install that recommendation to enable the editor integration; the pnpm commands work without it.
 
 To install a package, open Extensions, select **... > Install from VSIX...**, and choose the
-file from `releases/`. The publisher ID `tuturuify-local` is a local packaging placeholder.
-Choose your registered publisher ID before publishing to the Marketplace.
+file from `releases/`. The extension uses the registered publisher ID `ravenmagbanua`.
 
 ## Continuous integration
 
