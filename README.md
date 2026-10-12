@@ -143,6 +143,12 @@ builds an installable package; Marketplace publishing is a separate release step
 The source project's `docs/ARCHITECTURE.md` documents component responsibilities, lifecycle,
 error identity, and packaging details.
 
+## Support
+
+For questions, bug reports, and feature requests, use
+[GitHub Issues](https://github.com/pravennn08/tuturuify/issues). The
+[support guide](SUPPORT.md) includes troubleshooting steps and explains what to include in a report.
+
 ## Troubleshooting
 
 Open **View > Output > Tuturuify** for playback failures. Try **Test Sound** first. Check that

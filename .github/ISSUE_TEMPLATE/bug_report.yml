@@ -1,0 +1,83 @@
+name: Bug report
+description: Report a problem with Tuturuify's error detection, audio, or installation.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check [existing issues](https://github.com/pravennn08/tuturuify/issues)
+        and the [support guide](https://github.com/pravennn08/tuturuify/blob/HEAD/SUPPORT.md) first.
+        The current release supports Windows desktop VS Code and plays only for new Error diagnostics.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected to happen.
+      placeholder: A new TypeScript error appeared, but the sound did not play.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include a small code example if the problem involves error detection.
+      placeholder: |
+        1. Open a TypeScript file.
+        2. Add const greeting: string = 123;
+        3. Wait for the Error diagnostic in the Problems panel.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Find Tuturuify's version in Extensions and VS Code's version in Help > About.
+      placeholder: |
+        Tuturuify version:
+        VS Code version:
+        Operating system and version:
+        Programming language and language extension:
+        Local workspace, WSL, SSH, or Dev Container:
+    validations:
+      required: true
+  - type: dropdown
+    id: test-sound
+    attributes:
+      label: Does Tuturuify Test Sound work?
+      description: Run Tuturuify Test Sound from the Command Palette.
+      options:
+        - Yes, the sound plays
+        - No, the sound does not play
+        - I have not tried it
+    validations:
+      required: true
+  - type: dropdown
+    id: audio-source
+    attributes:
+      label: Sound file
+      options:
+        - Bundled tuturu.mp3
+        - Custom MP3
+        - Custom PCM WAV
+        - Other or unsure
+  - type: textarea
+    id: settings
+    attributes:
+      label: Relevant settings
+      description: Include enabled, volume, debounceMs, and cooldownMs if you changed them.
+      placeholder: |
+        tuturuify.enabled: true
+        tuturuify.volume: 0.8
+        tuturuify.debounceMs: 400
+        tuturuify.cooldownMs: 2000
+  - type: textarea
+    id: logs
+    attributes:
+      label: Tuturuify Output log
+      description: Paste relevant lines from View > Output > Tuturuify. Omit personal file paths.
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or additional context
+      description: Attach a screenshot of the error or playback message if it helps explain the problem.

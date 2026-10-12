@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest an improvement to Tuturuify.
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check [existing requests](https://github.com/pravennn08/tuturuify/issues)
+        before suggesting an improvement.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Explain the situation where this feature would help you.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed improvement
+      description: Describe how you would like Tuturuify to behave.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives or workarounds
+      description: Include anything you have already tried, if applicable.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Include examples, screenshots, or your operating system if relevant.

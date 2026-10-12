@@ -1,0 +1,48 @@
+name: Support question
+description: Get help installing, configuring, or using Tuturuify.
+title: "[Support]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Check the [support guide](https://github.com/pravennn08/tuturuify/blob/HEAD/SUPPORT.md)
+        for common playback and setup questions. If something is broken, use the Bug report form.
+  - type: dropdown
+    id: topic
+    attributes:
+      label: What do you need help with?
+      options:
+        - Installing or updating
+        - Choosing or testing a sound
+        - Automatic error sounds
+        - Settings
+        - Other Tuturuify question
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: Describe what you are trying to do and where you need help.
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Include any commands, settings, or troubleshooting steps you have used.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include these details if your question involves installation or sound playback.
+      placeholder: |
+        Tuturuify version:
+        VS Code version:
+        Operating system and version:
+        Programming language and language extension:
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant messages or screenshots
+      description: Paste relevant Tuturuify Output messages or attach a screenshot. Omit personal file paths.
